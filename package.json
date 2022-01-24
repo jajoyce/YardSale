@@ -1,0 +1,28 @@
+{
+  "name": "yardsale",
+  "version": "1.0.0",
+  "description": "For Project 2, we're creating a web app to buy and sell used household items locally, similar to OfferUp, LetGo, etc.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jajoyce/YardSale.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jajoyce/YardSale/issues"
+  },
+  "homepage": "https://github.com/jajoyce/YardSale#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.1.7",
+    "nodemon": "^2.0.15"
+  }
+}
