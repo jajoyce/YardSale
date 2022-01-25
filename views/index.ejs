@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head.ejs', {page: 'Home'}) %>
+
+<body class="has-navbar-fixed-top has-background-grey-darker">
+
+    <%- include ('./partials/nav.ejs') %>
+
+    <section class="hero has-background-primary-dark has-text-centered">
+        <div class="hero-body">
+            <h2 class="title is-2 has-text-light">YardSale</h2>
+            <h4 class="title is-4 has-text-light">Buy and sell well-loved products locally!</h2>
+        </div>
+    </section>
+    <main class="container has-text-centered">
+        <div class="columns is-multiline is-centered">
+            <div class="column is-three-fifths">
+                <article class="card home-card has-background-primary-dark">
+                    <div class="card-content">
+                        <div class="content">
+                            <h4 class="title is-4">
+                                <a href="/products" class="has-text-link-light">See What's For Sale Near You</a>
+                            </h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="card home-card has-background-primary-dark">
+                    <div class="card-content">
+                        <div class="content">
+                            <h4 class="title is-4">
+                                <a href="/products/new" class="has-text-link-light">Sell Something Locally!</a>
+                            </h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="card home-card has-background-primary-dark">
+                    <div class="card-content">
+                        <div class="content">
+                            <h4 class="title is-4">
+                                <a href="/users" class="has-text-link-light">Local Sellers and Buyers</a>
+                            </h4>
+                        </div>
+                    </div>
+                </article>
+                <article class="card home-card has-background-primary-dark">
+                    <div class="card-content">
+                        <div class="content">
+                            <h4 class="title is-4">
+                                <a href="/reviews" class="has-text-link-light">Local Seller Reviews</a>
+                            </h4>
+                        </div>
+                    </div>
+                </article><br><br>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
