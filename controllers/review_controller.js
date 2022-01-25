@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-// const { Review } = require('../models');
+const { Review } = require('../models');
 
 router.get('/', (req, res) => {
-    res.send('This is the Reviews page, up and running.');
+    res.render('reviews/index.ejs');
 });
 
 module.exports = router;
