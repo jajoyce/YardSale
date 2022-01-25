@@ -3,7 +3,7 @@ const app = express();
 const methodOverride = require('method-override');
 const controllers = require('./controllers');
 
-const PORT = 4000;
+const PORT = 4400;
 
 app.set('view engine', 'ejs');
 
@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use('/static', express.static('public'));
 
-// app.use('/products', controllers.product);
-// app.use('/users', controllers.user);
-// app.use('/reviews', controllers.review);
+app.use('/products', controllers.product);
+app.use('/users', controllers.user);
+app.use('/reviews', controllers.review);
 
 
 app.get('/', (req, res) => {
@@ -26,4 +26,4 @@ app.get('/*', (req, res) => {
 });
 
 
-app.listen(PORT, () => console.log(`APP IS RUNNING ON PORT ${PORT}`));
+app.listen(PORT, () => console.log(`RUNNING ON PORT ${PORT}`));
