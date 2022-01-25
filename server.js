@@ -18,7 +18,7 @@ app.use('/reviews', controllers.review);
 
 
 app.get('/', (req, res) => {
-    res.send('This is the Home page, up and running.');
+    res.render('index.ejs');
 });
 
 app.get('/*', (req, res) => {
