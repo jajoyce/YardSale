@@ -11,8 +11,9 @@ body {
 }
 
 .home-card {
-    padding-top: 20px;
-    margin-bottom: 30px;
+    padding-top: 15px;
+    margin-bottom: 25px;
+    border-radius: 30px;
 }
 
 .img-card-figure {
