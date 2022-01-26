@@ -22,7 +22,7 @@ module.exports = [
         price: 1700, 
         image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F_j47CXrjYTRg%2FTR6vI599jfI%2FAAAAAAAAAIg%2FWRY5SGQ8GPM%2Fs1600%2Fxmenarcade.jpg&f=1&nofb=1", 
         description: "Fully Operational and Awesome", 
-        catergory: "Electronics",
+        category: "Electronics",
         sellerUser: 123, 
         sold: false, 
     }, 

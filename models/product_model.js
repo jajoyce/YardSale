@@ -18,12 +18,18 @@ const productSchema = new mongoose.Schema(
         description: {
             type: String, 
         }, 
+        category: {
+            type: String, 
+            required: [true, 'You must provide a category for your product.']
+        }, 
         sellerUser: {
-            type: mongoose.Types.ObjectId,
+            // type: mongoose.Types.ObjectId,
+            type: Number, 
             ref: "User",    
         }, 
         sold: {
-            type: Boolean,    
+            type: Boolean, 
+            default: false
         }, 
     }, 
     {
