@@ -26,4 +26,22 @@ router.get('/new', (req, res) => {
     res.render('products/new.ejs');
 });
 
+router.get('/:productID', (req, res) => {
+    Product.findById(req.params.productID, (error, foundProduct) => {
+        if (error) {
+            console.log(error);
+            return res.redirect('/products');
+        };
+        res.render('products/show.ejs', { product: foundProduct});
+    });
+});
+
+router.post('/', (req, res) => {
+    Product.create(req.body, (error, newProduct) => {
+        if (error) console.log(error);
+        console.log(`CREATED ${newProduct}`);
+        res.redirect('/products');
+    });
+});
+
 module.exports = router;
