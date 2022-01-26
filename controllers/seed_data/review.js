@@ -16,7 +16,7 @@ module.exports = [
     {
         rating: 5, 
         title: "Highly Recommended", 
-        content: "transaction was smooth and the product works amazingly", 
+        content: "Transaction was smooth and the product works amazingly", 
         reviewedSellerUser: 123, 
         reviewingBuyerUser: 123, 
     }, 
@@ -44,7 +44,7 @@ module.exports = [
     {
         rating: 3, 
         title: "SO-SO", 
-        content: "i ws expecting more but it is as advertised so i cant complain", 
+        content: "I was expecting more but it is as advertised so i cant complain", 
         reviewedSellerUser: 123, 
         reviewingBuyerUser: 123, 
     }, 
