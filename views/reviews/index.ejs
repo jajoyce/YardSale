@@ -22,8 +22,24 @@
                         </div>
                     </div>
                 </article>
-                <br><br><br><br><br><br><br><br>
+                <br>
             </div>
+            <% for (let i = 0; i < reviews.length; i++) { %>
+                <% let review = reviews[i]; %>
+                <div class="column is-three-quarters">
+                    <article class="card has-background-grey-dark">
+                        <div class="level">
+                            <div class="level-left">
+                                <div class="card-content">
+                                    <div class="content">
+                                        <h5 class="has-text-light">Review Title: &nbsp;<%= review.title %></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            <% } %>
         </div>
     </main>
 </body>
