@@ -9,7 +9,7 @@ module.exports = [
     {
         rating: 3, 
         title: "ehhhhhh", 
-        content: "Its doing the jjob so i wont complain but complaints could be made.", 
+        content: "Its doing the job so i wont complain but complaints could be made.", 
         reviewedSellerUser: 123, 
         reviewingBuyerUser: 123, 
     }, 

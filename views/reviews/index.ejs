@@ -14,16 +14,7 @@
     </section>
     <main class="container has-text-centered extra-padding-bottom">
         <div class="columns is-multiline is-centered">
-            <div class="column is-three-fifths">
-                <article class="card home-card has-background-grey-dark">
-                    <div class="card-content">
-                        <div class="content">
-                            <h3 class="title is-3 has-text-light">Reviews</h3>
-                        </div>
-                    </div>
-                </article>
-                <br>
-            </div>
+            
             <% for (let i = 0; i < reviews.length; i++) { %>
                 <% let review = reviews[i]; %>
                 <div class="column is-three-quarters">
@@ -31,8 +22,15 @@
                         <div class="level">
                             <div class="level-left">
                                 <div class="card-content">
-                                    <div class="content">
-                                        <h5 class="has-text-light">Review Title: &nbsp;<%= review.title %></h5>
+                                    <div class="content"><div> 
+                                        <h3 class="has-text-light">Review Title: &nbsp;<%= review.title %></h3>
+                                            <p class="has-text-light">Rating: &nbsp;<%= review.rating %>⭐️ 
+                                                <p class="has-text-light">Content: &nbsp;<%= review.content %>
+                                                    <p class="has-text-light">ReviewedSellerUser: &nbsp;<%= review.reviewedSellerUser %>
+                                                        <p class="has-text-light">ReviewingBuyerUser: &nbsp;<%= review.reviewingBuyerUser %></p>
+                                                    </p>
+                                                </p>
+                                            </p>
                                     </div>
                                 </div>
                             </div>
