@@ -1,18 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { Product } = require('../models');
+const { Product, User } = require('../models');
 const seedData = require('./seed_data/product');
-
-Product.deleteMany({}, (error, deletedProducts) => {
-    if (error) return console.log(error);
-    console.log(deletedProducts);
-    Product.insertMany(seedData, (error, insertedProducts) => {
-        if (error) return console.log(error);
-        console.log('PRODUCTS SEED COMPLETE:');
-        console.log(insertedProducts);
-        }
-    );
-});
 
 
 router.get('/', (req, res) => {
