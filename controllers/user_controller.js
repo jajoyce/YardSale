@@ -13,14 +13,14 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:userID', (req, res) => {
-    User.findById(req.params.userID, (error, foundUser) => {
-        if (error) {
-            console.log(error);
-            return res.redirect('/users');
-        };
-        res.render('users/show.ejs', { user: foundUser});
-    });
+router.get('/:userID', async (req, res) => {
+    try {
+        const foundUser = await User.findById(req.params.userID);
+        return res.render('users/show.ejs', { user: foundUser});
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/users');
+    }
 });
 
 module.exports = router;
