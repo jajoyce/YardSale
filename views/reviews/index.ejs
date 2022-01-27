@@ -17,17 +17,24 @@
             
             <% for (let i = 0; i < reviews.length; i++) { %>
                 <% let review = reviews[i]; %>
-                <div class="column is-three-quarters">
-                    <article class="card has-background-grey-dark">
-                        <div class="level">
-                            <div class="level-left">
-                                <div class="card-content">
-                                    <div class="content"><div> 
-                                        <h3 class="has-text-light">Review Title: &nbsp;<%= review.title %></h3>
-                                        <p class="has-text-light">Rating: &nbsp;<%= review.rating %>⭐️ </p>
-                                        <p class="has-text-light">Content: &nbsp;<%= review.content %></p>
-                                        <p class="has-text-light">ReviewedSellerUser: &nbsp;<%= review.reviewedSellerUser %></p>
-                                        <p class="has-text-light">ReviewingBuyerUser: &nbsp;<%= review.reviewingBuyerUser %></p>
+                <div class="column is-two-thirds">
+                    <article class="card review-card has-background-grey-dark">
+                        <div class="card-content">
+                            <div class="content"><div> 
+                                <h2 class="has-text-light">Review Title: &nbsp;<%= review.title %></h2>
+                                <h4 class="has-text-light">Rating: &nbsp;<%= review.rating %> ⭐️ </h4>
+                                <h6 class="has-text-light">Comments: &nbsp;"<%= review.content %>"</h6>
+                                <h6 class="has-text-light">
+                                    Reviewed Seller: &nbsp;
+                                    <a href="/users/<%= review.reviewedSellerUser._id %>" class="light-link-text">
+                                        <%= review.reviewedSellerUser.firstName %> 
+                                        <%= review.reviewedSellerUser.lastName %>&nbsp;
+                                        (<%= review.reviewedSellerUser.averageRating %> ⭐️ )
+                                    </a>
+                                </h6>
+                                <div class="field form-buttons is-grouped">
+                                    <div class="control review-index-control">
+                                        <a class="button is-info has-background-info-dark" href="/reviews/<%= review._id %>">Show Full Review</a>
                                     </div>
                                 </div>
                             </div>
