@@ -13,6 +13,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const newReview = await Review.create(req.body);
+        console.log(`CREATED ${newReview}`);
+        return res.redirect(`/reviews/${newReview._id}`);
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/reviews');
+    }
+});
+
 router.get('/new', (req, res) => {
     res.render('reviews/new.ejs');
 });
