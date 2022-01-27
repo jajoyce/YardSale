@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const { Product, User } = require('../models');
-const seedData = require('./seed_data/product');
 
 
 router.get('/', (req, res) => {

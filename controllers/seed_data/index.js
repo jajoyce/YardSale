@@ -1,46 +1,28 @@
-const userSeedData = require('./user');
-const productSeedData = require('./product');
-const reviewSeedData = require('./review');
 const { User, Product, Review } = require('../../models');
 
-function seedUser() {
-    User.deleteMany({}, (error, deletedUsers) => {
-        if (error) return console.log(error);
+async function seedAll() {
+    try {
+        const deletedUsers = await User.deleteMany({});
+        const userSeedData = await require('./user');
+        const insertedUsers = await User.insertMany(userSeedData);
         console.log(deletedUsers);
-        User.insertMany(userSeedData, (error, insertedUsers) => {
-            if (error) return console.log(error);
-            console.log('USERS SEED COMPLETE:');
-            // console.log(insertedUsers);
-            seedProduct();
-            seedReview();
-        });
-    });   
-};
-
-function seedProduct() {
-    Product.deleteMany({}, (error, deletedProducts) => {
-        if (error) return console.log(error);
+        console.log(`INSERTED ${insertedUsers.length} SEED USERS`);
+        const deletedProducts = await Product.deleteMany({});
+        const productSeedData = await require('./product');
+        const insertedProducts = await Product.insertMany(productSeedData);
         console.log(deletedProducts);
-        Product.insertMany(productSeedData, (error, insertedProducts) => {
-            if (error) return console.log(error);
-            console.log('PRODUCTS SEED COMPLETE:');
-            // console.log(insertedProducts);
-        });
-    });
-};
-
-function seedReview() {
-    Review.deleteMany({}, (error, deletedReviews) => {
-        if (error) return console.log(error);
+        console.log(`INSERTED ${insertedProducts.length} SEED PRODUCTS`);
+        const deletedReviews = await Review.deleteMany({});
+        const reviewSeedData = await require('./review');
+        const insertedReviews = await Review.insertMany(reviewSeedData);
         console.log(deletedReviews);
-        Review.insertMany(reviewSeedData, (error, insertedReviews) => {
-            if (error) return console.log(error);
-            console.log('REVIEWS SEED COMPLETE:');
-            // console.log(insertedReviews);
-        });
-    });
+        console.log(`INSERTED ${insertedReviews.length} SEED REVIEWS`);
+    } catch (error) {
+        console.log(error);
+    }
 };
 
-seedUser();
+
+seedAll();
 
 module.exports = "SEEDING DATA";
