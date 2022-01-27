@@ -20,12 +20,22 @@ body {
     margin: 20px 25px 30px 25px;
 }
 
-.proudct-list-img {
+.product-list-img {
     border-radius: 0.25rem;
     max-width: 180px;
 }
 
 .product-show-img {
+    border-radius: 0.25rem;
+    max-width: 280px;
+}
+
+.user-list-img {
+    border-radius: 0.25rem;
+    max-width: 180px;
+}
+
+.user-show-img {
     border-radius: 0.25rem;
     max-width: 280px;
 }

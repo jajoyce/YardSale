@@ -12,17 +12,45 @@
             <h2 class="title is-2 has-text-light">Products For Sale Locally</h2>
         </div>
     </section>
-    <main class="container has-text-centered extra-padding-bottom">
+    <main class="container">
         <div class="columns is-multiline is-centered">
-            <div class="column is-three-fifths">
-                <article class="card home-card has-background-grey-dark">
-                    <div class="card-content">
-                        <div class="content">
-                            <h3 class="title is-3 has-text-light">Products</h3>
+            <% for (let i = 0; i < products.length; i++) { %>
+                <% let product = products[i]; %>
+                <div class="column is-three-quarters">
+                    <article class="card has-background-grey-dark">
+                        <div class="level">
+                            <div class="level-left">
+                                <div class="card-image">
+                                    <figure class="image img-card-figure media-left">
+                                        <a href="/products/<%= product._id %>">
+                                            <img src="<%= product.image %>" class="product-list-img" alt="Photo of <%= product.name %>">
+                                        </a>
+                                    </figure>
+                                    <div class="field is-grouped is-grouped-centered">
+                                        <div class="control">
+                                            <a class="button is-info has-background-info-dark" href="/products/<%= product._id %>">Show Product Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <h2><a href="/products/<%= product._id %>" class="has-text-link-light"><%= product.name %></a></h2>
+                                        <h5 class="has-text-light">Price: &nbsp;$<%= product.price %></h5>
+                                        <h5 class="has-text-light">Description: &nbsp;"<%= product.description %>"</h5>
+                                        <h5 class="has-text-light">Seller: &nbsp;<%= product.sellerUser %></h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </article>
+                </div>
+            <% } %>
+            <div class="column is-three-quarters">
+                <div class="field is-grouped is-grouped-centered">
+                    <div class="control form-buttons">
+                        <a class="button is-primary has-background-primary-dark" href="/products/new">Add something you want to sell!</a>
                     </div>
-                </article>
-                <br><br><br><br><br><br><br><br>
+                </div>
             </div>
         </div>
     </main>

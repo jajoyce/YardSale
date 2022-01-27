@@ -12,17 +12,47 @@
             <h2 class="title is-2 has-text-light">Local Sellers and Buyers</h2>
         </div>
     </section>
-    <main class="container has-text-centered extra-padding-bottom">
+    <main class="container">
         <div class="columns is-multiline is-centered">
-            <div class="column is-three-fifths">
-                <article class="card home-card has-background-grey-dark">
-                    <div class="card-content">
-                        <div class="content">
-                            <h3 class="title is-3 has-text-light">Users</h3>
+            <% for (let i = 0; i < users.length; i++) { %>
+                <% let user = users[i]; %>
+                <div class="column is-three-quarters">
+                    <article class="card has-background-grey-dark">
+                        <div class="level">
+                            <div class="level-left">
+                                <div class="card-image">
+                                    <figure class="image img-card-figure media-left">
+                                        <a href="/users/<%= user._id %>">
+                                            <img src="<%= user.profileImage %>" class="user-list-img" alt="Photo of <%= user.userName %>">
+                                        </a>
+                                    </figure>
+                                    <div class="field is-grouped is-grouped-centered">
+                                        <div class="control">
+                                            <a class="button is-info has-background-info-dark" href="/users/<%= user._id %>">Show User Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <h2><a href="/users/<%= user._id %>" class="has-text-link-light">
+                                            <%= user.firstName %> <%= user.lastName %>
+                                        </a></h2>
+                                        <h5 class="has-text-light">UserName: &nbsp;<%= user.userName %></h5>
+                                        <h5 class="has-text-light">Location: &nbsp;<%= user.location %></h5>
+                                        <h5 class="has-text-light">Average Rating: &nbsp;<%= user.averageRating %> ⭐️ </h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </article>
+                </div>
+            <% } %>
+            <div class="column is-three-quarters">
+                <div class="field is-grouped is-grouped-centered">
+                    <div class="control form-buttons">
+                        <a class="button is-primary has-background-primary-dark" href="/users/new">Sign up to buy and sell near you!</a>
                     </div>
-                </article>
-                <br><br><br><br><br><br><br><br>
+                </div>
             </div>
         </div>
     </main>

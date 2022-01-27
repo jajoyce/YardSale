@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../partials/head.ejs', {page: 'Seller Review'}) %>
+
+<body class="has-navbar-fixed-top has-background-grey-darker">
+
+    <%- include ('../partials/nav.ejs') %>
+
+    <section class="hero has-background-primary-dark has-text-centered">
+        <div class="hero-body">
+            <h2 class="title is-2 has-text-light">Seller Review</h2>
+        </div>
+    </section>
+    <main class="container extra-padding-bottom">
+        <div class="columns is-multiline is-centered">
+            <div class="column is-three-quarters">
+                <article class="card has-background-grey-dark">
+                    <div class="level">
+                        <div class="level-left">
+                            <div class="card-content">
+                                <div class="content"><div> 
+                                    <h3 class="has-text-light">Review Title: &nbsp;<%= review.title %></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -16,11 +16,11 @@ const reviewSchema = new mongoose.Schema(
             type: String, 
         }, 
         reviewedSellerUser: {
-            type: mongoose.Types.ObjectId,
+            type: Number,
             ref: "User",    
         }, 
         reviewingBuyerUser: {
-            type: mongoose.Types.ObjectId,
+            type: Number,
             ref: "User",    
         }, 
     }, 
