@@ -3,11 +3,14 @@ const router = express.Router();
 const { User } = require('../models');
 
 
-router.get('/', (req, res) => {
-    User.find({}, (error, foundUsers) => {
-        if (error) return console.log(error);
-        res.render('users/index.ejs', { users: foundUsers });
-    });
+router.get('/', async (req, res) => {
+    try {
+        const foundUsers = await User.find({});
+        return res.render('users/index.ejs', { users: foundUsers });
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/');
+    }
 });
 
 router.get('/:userID', (req, res) => {
