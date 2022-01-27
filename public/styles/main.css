@@ -55,3 +55,26 @@ body {
 .extra-padding-bottom {
     padding-bottom: 250px;
 }
+
+.light-link-text {
+    color: #abf;
+}
+
+.light-link-text:hover {
+    color: #bcf;
+}
+
+/* 
+h1, h2, h3, h4, h5, h6, p {
+    overflow-wrap: normal!important;
+}
+
+.wrap-text {
+    overflow-wrap: normal!important;
+    display: inline-block!important;
+    height: auto !important;
+    white-space: unset !important;
+    color: purple !important;
+    text-align: left!important;
+    width: 100%;
+} */

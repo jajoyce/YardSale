@@ -23,6 +23,9 @@ const userSchema = new mongoose.Schema(
         }, 
         averageRating: {
             type: Number, 
+        }, 
+        seed_id: {
+            type: Number,
         }
     }, 
 );

@@ -12,8 +12,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use('/static', express.static('public'));
 
-app.use('/products', controllers.product);
 app.use('/users', controllers.user);
+app.use('/products', controllers.product);
 app.use('/reviews', controllers.review);
 
 

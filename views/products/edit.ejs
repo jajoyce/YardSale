@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../partials/head.ejs', {page: 'Update Product'}) %>
+
+<body class="has-navbar-fixed-top has-background-grey-darker">
+
+    <%- include ('../partials/nav.ejs') %>
+
+    <section class="hero has-background-primary-dark has-text-centered">
+        <div class="hero-body">
+            <h2 class="title is-2 has-text-light">Update Your Product Info:</h2>
+            <h3 class="title is-3 has-text-light"><%= product.name %></h3>
+        </div>
+    </section>
+    <main class="container">
+        <div class="columns is-multiline is-centered">
+            <div class="column is-two-thirds">
+                <article class="card form-card has-background-grey-dark">
+                    <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+                        <div class="field">
+                            <label class="label has-text-light">Product Name *</label>
+                            <div class="control">
+                                <input class="input" type="text" name="name" value="<%= product.name %>" placeholder="<%= product.name %>" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-light">Price *</label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="number" name="price" value="<%= product.price %>" placeholder="<%= product.price %>" required>
+                                <span class="icon is-left">$</span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-light">Image URL *</label>
+                            <div class="control">
+                                <input class="input" type="text" name="image" value="<%= product.image %>" placeholder="<%= product.image %>" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-light">Category *</label>
+                            <div class="control">
+                                <% if (product.category == "Furniture") { %>
+                                    <input type="radio" id="furniture" name="category" value="Furniture" required checked>
+                                <% } else { %>
+                                    <input type="radio" id="furniture" name="category" value="Furniture" required>
+                                <% } %>
+                                <label class="has-text-light" for="furniture">&nbsp;Furniture</label><br>
+                                <% if (product.category == "Electronics") { %>
+                                    <input type="radio" id="electronics" name="category" value="Electronics" required checked>
+                                <% } else { %>
+                                    <input type="radio" id="electronics" name="category" value="Electronics" required>
+                                <% } %>
+                                <label class="has-text-light" for="electronics">&nbsp;Electronics</label><br>
+                                <% if (product.category == "Clothing") { %>
+                                    <input type="radio" id="clothing" name="category" value="Clothing" required checked>
+                                <% } else { %>
+                                    <input type="radio" id="clothing" name="category" value="Clothing" required>
+                                <% } %>
+                                <label class="has-text-light" for="clothing">&nbsp;Clothing</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-light">Description</label>
+                            <div class="control">
+                                <input class="input" type="text" name="description" value="<%= product.description %>" placeholder="<%= product.description %>">
+                            </div>
+                        </div>
+                        <div class="has-text-light">
+                            <h5>* Required</h5>
+                        </div>
+                        <div class="field form-buttons is-grouped is-grouped-centered">
+                            <div class="control">
+                                <button type="submit" class="button is-primary has-background-primary-dark">Update Product</button>
+                            </div>
+                            <div class="control">
+                                <button type="reset" class="button is-dark">Reset Form</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+                        <div class="field form-buttons is-grouped is-grouped-centered">
+                            <div class="control">
+                                <button type="submit" class="button is-danger has-background-danger-dark">Delete Product</button>
+                            </div>
+                            <div class="control">
+                                <a class="button is-light" href="/products/<%= product._id %>">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
