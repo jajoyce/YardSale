@@ -52,6 +52,11 @@ body {
     margin-bottom: 20px;
 }
 
+.review-index-control {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
 .extra-padding-bottom {
     padding-bottom: 250px;
 }

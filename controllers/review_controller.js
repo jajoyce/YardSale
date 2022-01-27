@@ -1,15 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { Review } = require('../models');
+const { Review, User } = require('../models');
 
 
-router.get('/', (req, res) => {
-    Review.find({}, (error, foundReviews) => {
-        if (error) return console.log(error);
-        res.render('reviews/index.ejs', { reviews: foundReviews });
-    });
+router.get('/', async (req, res) => {
+    try {
+        const foundReviews = await Review.find({}).populate('reviewedSellerUser');
+        return res.render('reviews/index.ejs', { reviews: foundReviews });
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/');
+    }
 });
-
 
 router.get('/new', (req, res) => {
     res.render('reviews/new.ejs');
