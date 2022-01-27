@@ -3,11 +3,14 @@ const router = express.Router();
 const { Product, User } = require('../models');
 
 
-router.get('/', (req, res) => {
-    Product.find({}, (error, foundProducts) => {
-        if (error) return console.log(error);
-        res.render('products/index.ejs', { products: foundProducts });
-    });
+router.get('/', async (req, res) => {
+    try {
+        const foundProducts = await Product.find({}).populate('sellerUser');
+        return res.render('products/index.ejs', { products: foundProducts });
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/');
+    }
 });
 
 router.get('/new', (req, res) => {

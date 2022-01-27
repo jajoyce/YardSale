@@ -42,7 +42,15 @@
                                         <h5 class="has-text-light">Price: &nbsp;$<%= product.price %></h5>
                                         <h5 class="has-text-light">Category: &nbsp;<%= product.category %></h5>
                                         <h5 class="has-text-light">Description: &nbsp;"<%= product.description %>"</h5>
-                                        <h5 class="has-text-light">Seller: &nbsp;<%= product.sellerUser %></h5>
+                                        <h5 class="has-text-light">Location: &nbsp;<%= product.sellerUser.location %></h5>
+                                        <h5 class="has-text-light">
+                                            Seller: &nbsp;
+                                            <a href="/users/<%= product.sellerUser._id %>" class="light-link-text">
+                                                <%= product.sellerUser.firstName %> 
+                                                <%= product.sellerUser.lastName %> &nbsp; 
+                                                (<%= product.sellerUser.averageRating %> ⭐️)
+                                            </a>
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
