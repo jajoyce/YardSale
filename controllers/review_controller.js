@@ -34,14 +34,14 @@ router.get('/new', async (req, res) => {
     }
 });
 
-router.get('/:reviewID', (req, res) => {
-    Review.findById(req.params.reviewID, (error, foundReview) => {
-        if (error) {
-            console.log(error);
-            return res.redirect('/reviews');
-        };
-        res.render('reviews/show.ejs', { review: foundReview});
-    });
+router.get('/:reviewID', async (req, res) => {
+    try {
+        const foundReview = await Review.findById(req.params.reviewID).populate('reviewedSellerUser');
+        return res.render('reviews/show.ejs', { review: foundReview});
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/reviews');
+    }
 });
 
 
