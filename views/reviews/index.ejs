@@ -17,19 +17,15 @@
             
             <% for (let i = 0; i < reviews.length; i++) { %>
                 <% let review = reviews[i]; %>
-                <div class="column is-three-quarters">
-                    <article class="card has-background-grey-dark">
-                        <div class="level">
-                            <div class="level-left">
-                                <div class="card-content">
-                                    <div class="content"><div> 
-                                        <h3 class="has-text-light">Review Title: &nbsp;<%= review.title %></h3>
-                                        <p class="has-text-light">Rating: &nbsp;<%= review.rating %>⭐️ </p>
-                                        <p class="has-text-light">Content: &nbsp;<%= review.content %></p>
-                                        <p class="has-text-light">ReviewedSellerUser: &nbsp;<%= review.reviewedSellerUser %></p>
-                                        <p class="has-text-light">ReviewingBuyerUser: &nbsp;<%= review.reviewingBuyerUser %></p>
-                                    </div>
-                                </div>
+                <div class="column is-two-thirds">
+                    <article class="card review-card has-background-grey-dark">
+                        <div class="card-content">
+                            <div class="content"><div> 
+                                <h3 class="has-text-light">Review Title: &nbsp;<%= review.title %></h3>
+                                <p class="has-text-light">Rating: &nbsp;<%= review.rating %> ⭐️ </p>
+                                <p class="has-text-light">Comments: &nbsp;"<%= review.content %>"</p>
+                                <p class="has-text-light">Reviewed Seller: &nbsp;<%= review.reviewedSellerUser %></p>
+                                <p class="has-text-light">Reviewing Buyer: &nbsp;<%= review.reviewingBuyerUser %></p>
                             </div>
                         </div>
                     </article>
