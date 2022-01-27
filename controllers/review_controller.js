@@ -24,8 +24,14 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/new', (req, res) => {
-    res.render('reviews/new.ejs');
+router.get('/new', async (req, res) => {
+    try {
+        const defaultUser = await User.findOne({ seed_id: 1 });
+        return res.render('reviews/new.ejs', {user: defaultUser});
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/reviews');
+    }
 });
 
 router.get('/:reviewID', (req, res) => {
