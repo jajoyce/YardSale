@@ -13,6 +13,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const newProduct = await Product.create(req.body);
+        console.log(`CREATED ${newProduct}`);
+        return res.redirect(`/products/${newProduct._id}`);
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/products');
+    }
+});
+
 router.get('/new', async (req, res) => {
     try {
         const defaultUser = await User.findOne({ seed_id: 1 });
@@ -33,15 +44,37 @@ router.get('/:productID', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.delete('/:productID', async (req, res) => {
     try {
-        const newProduct = await Product.create(req.body);
-        console.log(`CREATED ${newProduct}`);
-        return res.redirect(`/products/${newProduct._id}`);
+        const deletedProduct = await Product.findByIdAndDelete(req.params.productID);
+        console.log(deletedProduct);
+    } catch (error) {
+        console.log(error);
+    }
+    return res.redirect('/products');
+});
+
+router.get('/:productId/edit', async (req, res) => {
+    try {
+        const updatingProduct = await Product.findById(req.params.productId);
+        console.log(updatingProduct);
+        return res.render('products/edit.ejs', { product: updatingProduct })
     } catch (error) {
         console.log(error);
         return res.redirect('/products');
     }
 });
+
+router.put('/:productId', async (req, res) => {
+    try {
+        const updatedProduct = await Product.findByIdAndUpdate(req.params.productId, req.body);
+        console.log(updatedProduct);
+        return res.redirect(`/products/${updatedProduct._id}`);
+    } catch (error) {
+        console.log(error);
+        return res.redirect(`/products/${req.params.productId}`);
+    }
+});
+
 
 module.exports = router;
