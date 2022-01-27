@@ -14,14 +14,14 @@ router.get('/new', (req, res) => {
     res.render('products/new.ejs');
 });
 
-router.get('/:productID', (req, res) => {
-    Product.findById(req.params.productID, (error, foundProduct) => {
-        if (error) {
-            console.log(error);
-            return res.redirect('/products');
-        };
-        res.render('products/show.ejs', { product: foundProduct});
-    });
+router.get('/:productID', async (req, res) => {
+    try {
+        const foundProduct = await Product.findById(req.params.productID).populate('sellerUser');
+        return res.render('products/show.ejs', { product: foundProduct});
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/products');
+    }
 });
 
 router.post('/', (req, res) => {

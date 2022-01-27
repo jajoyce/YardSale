@@ -24,7 +24,7 @@
                                 </figure>
                                 <div class="field is-grouped is-grouped-centered">
                                     <div class="control">
-                                        <a class="button is-primary has-background-pris-primary-dark" href="/products/<%= product._id %>/edit">Update Product Info</a>
+                                        <a class="button is-primary has-background-primary-dark" href="/products/<%= product._id %>/edit">Update Product Info</a>
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +34,15 @@
                                     <h5 class="has-text-light">Price: &nbsp;$<%= product.price %></h5>
                                     <h5 class="has-text-light">Category: &nbsp;<%= product.category %></h5>
                                     <h5 class="has-text-light">Description: &nbsp;"<%= product.description %>"</h5>
-                                    <h5 class="has-text-light">Seller: &nbsp;<%= product.sellerUser %></h5>
+                                    <h5 class="has-text-light">Location: &nbsp;<%= product.sellerUser.location %></h5>
+                                    <h5 class="has-text-light">
+                                        Seller: &nbsp;
+                                        <a href="/users/<%= product.sellerUser._id %>" class="light-link-text">
+                                            <%= product.sellerUser.firstName %> 
+                                            <%= product.sellerUser.lastName %> &nbsp; 
+                                            (<%= product.sellerUser.averageRating %> ⭐️)
+                                        </a>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
