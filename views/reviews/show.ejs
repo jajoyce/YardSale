@@ -14,15 +14,21 @@
     </section>
     <main class="container extra-padding-bottom">
         <div class="columns is-multiline is-centered">
-            <div class="column is-three-quarters">
-                <article class="card has-background-grey-dark">
-                    <div class="level">
-                        <div class="level-left">
-                            <div class="card-content">
-                                <div class="content"><div> 
-                                    <h3 class="has-text-light">Review Title: &nbsp;<%= review.title %></h3>
-                                </div>
-                            </div>
+            <div class="column is-two-thirds">
+                <article class="card review-card has-background-grey-dark">
+                    <div class="card-content">
+                        <div class="content"><div> 
+                            <h1 class="has-text-light">"<%= review.title %>"</h1>
+                            <h2 class="has-text-light">Rating: &nbsp;<%= review.rating %> ⭐️ </h2>
+                            <h4 class="has-text-light">Comments: &nbsp;"<%= review.content %>"</h4>
+                            <h4 class="has-text-light">
+                                Reviewed Seller: &nbsp;
+                                <a href="/users/<%= review.reviewedSellerUser._id %>" class="light-link-text">
+                                    <%= review.reviewedSellerUser.firstName %> 
+                                    <%= review.reviewedSellerUser.lastName %>&nbsp;
+                                    (<%= review.reviewedSellerUser.averageRating %> ⭐️ )
+                                </a>
+                            </h4>
                         </div>
                     </div>
                 </article>
