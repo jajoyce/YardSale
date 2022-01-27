@@ -4,13 +4,13 @@ module.exports = [
         firstName: "Jane", 
         lastName: "Doe", 
         location: "New York", 
-        profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dbmcpa.com%2Fwp-content%2Fuploads%2F2017%2F07%2Fgeneric-female-headshot.png&f=1&nofb=1", 
+        profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.QVd2TToiairiy_E28sOYhQAAAA%26pid%3DApi&f=1", 
         averageRating: 3.5, 
     }, 
     {
         userName: "AliceWalker123", 
-        firstName: "Jane", 
-        lastName: "Doe", 
+        firstName: "Alice", 
+        lastName: "Walker", 
         location: "New York", 
         profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.0W5W4xqVXEn_q25EhSdm5QHaJQ%26pid%3DApi&f=1", 
         averageRating: 2.1, 
@@ -44,7 +44,7 @@ module.exports = [
         firstName: "Amya", 
         lastName: "Greg", 
         location: "Boston", 
-        profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.QVd2TToiairiy_E28sOYhQAAAA%26pid%3DApi&f=1", 
+        profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dbmcpa.com%2Fwp-content%2Fuploads%2F2017%2F07%2Fgeneric-female-headshot.png&f=1&nofb=1", 
         averageRating: 4.6, 
     }, 
     {
@@ -68,7 +68,7 @@ module.exports = [
         firstName: "Greyson", 
         lastName: "Redick", 
         location: "Boston", 
-        profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.QVd2TToiairiy_E28sOYhQAAAA%26pid%3DApi&f=1", 
+        profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.sportscasting.com%2Fwp-content%2Fuploads%2F2020%2F09%2FGrayson-Allen-Duke.jpg&f=1&nofb=1", 
         averageRating: 4.6, 
     }, 
     {
@@ -76,7 +76,7 @@ module.exports = [
         firstName: "Greg", 
         lastName: "Goldberg", 
         location: "Boston", 
-        profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.QVd2TToiairiy_E28sOYhQAAAA%26pid%3DApi&f=1", 
+        profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.the-sun.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2020%2F09%2FNINTCHDBPICT000455136836.jpg&f=1&nofb=1", 
         averageRating: 4.7, 
     }, 
 ];
