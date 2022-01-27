@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../partials/head.ejs', {page: 'Seller Profile'}) %>
+
+<body class="has-navbar-fixed-top has-background-grey-darker">
+
+    <%- include ('../partials/nav.ejs') %>
+
+    <section class="hero has-background-primary-dark has-text-centered">
+        <div class="hero-body">
+            <h2 class="title is-2 has-text-light"><%= user.firstName %> <%= user.lastName %>'s Profile</h2>
+        </div>
+    </section>
+    <main class="container extra-padding-bottom">
+        <div class="columns is-multiline is-centered">
+            <div class="column is-three-quarters">
+                <article class="card has-background-grey-dark">
+                    <div class="level">
+                        <div class="level-left">
+                            <div class="card-image">
+                                <figure class="image img-card-figure media-left">
+                                    <img src="<%= user.profileImage %>" class="user-show-img" alt="Photo of <%= user.userName %>">
+                                </figure>
+                                <div class="field is-grouped is-grouped-centered">
+                                    <div class="control">
+                                        <a class="button is-primary has-background-primary-dark" href="/users/<%= user._id %>">Update User Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h2 class="has-text-light"> 
+                                        <%= user.firstName %> <%= user.lastName %>
+                                    </h2>
+                                    <h5 class="has-text-light">UserName: &nbsp;<%= user.userName %></h5>
+                                    <h5 class="has-text-light">Location: &nbsp;<%= user.location %></h5>
+                                    <h5 class="has-text-light">Average Rating: &nbsp;<%= user.averageRating %> ⭐️ </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h3 class="title is-3 has-text-light has-text-centered">Seller Reviews</h3>
+                        </div>
+                    </div>
+                </article>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -22,5 +22,14 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:userID', (req, res) => {
+    User.findById(req.params.userID, (error, foundUser) => {
+        if (error) {
+            console.log(error);
+            return res.redirect('/users');
+        };
+        res.render('users/show.ejs', { user: foundUser});
+    });
+});
 
 module.exports = router;
