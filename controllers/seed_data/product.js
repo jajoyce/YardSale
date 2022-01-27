@@ -202,7 +202,6 @@ async function seedProducts() {
             sold: false, 
         }, 
     ];
-
     return seedArray;
 };
 
