@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 router.get('/new', async (req, res) => {
     try {
-        const defaultUser = await User.find({})[0];
+        const defaultUser = await User.findOne({ seed_id: 1 });
         return res.render('products/new.ejs', {user: defaultUser});
     } catch (error) {
         console.log(error);
@@ -33,12 +33,15 @@ router.get('/:productID', async (req, res) => {
     }
 });
 
-router.post('/', (req, res) => {
-    Product.create(req.body, (error, newProduct) => {
-        if (error) console.log(error);
+router.post('/', async (req, res) => {
+    try {
+        const newProduct = await Product.create(req.body);
         console.log(`CREATED ${newProduct}`);
-        res.redirect('/products');
-    });
+        return res.redirect(`/products/${newProduct._id}`);
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/products');
+    }
 });
 
 module.exports = router;

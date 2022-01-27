@@ -24,7 +24,7 @@ const productSchema = new mongoose.Schema(
         }, 
         sellerUser: {
             type: mongoose.Types.ObjectId,
-            ref: "User",    
+            ref: 'User',    
         }, 
         sold: {
             type: Boolean, 

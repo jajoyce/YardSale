@@ -5,7 +5,7 @@ module.exports = [
         lastName: "Doe", 
         location: "New York", 
         profileImage: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.QVd2TToiairiy_E28sOYhQAAAA%26pid%3DApi&f=1", 
-        averageRating: 3.5, 
+        averageRating: 4.5, 
         seed_id: 1, 
     }, 
     {
