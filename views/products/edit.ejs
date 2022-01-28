@@ -27,7 +27,7 @@
                         <div class="field">
                             <label class="label has-text-light">Price *</label>
                             <div class="control has-icons-left">
-                                <input class="input" type="number" name="price" value="<%= product.price %>" placeholder="<%= product.price %>" required>
+                                <input class="input" type="number" min=0 name="price" value="<%= product.price %>" placeholder="<%= product.price %>" required>
                                 <span class="icon is-left">$</span>
                             </div>
                         </div>
