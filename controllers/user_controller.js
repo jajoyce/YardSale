@@ -34,5 +34,26 @@ router.get('/:userId/edit', async (req, res) => {
     }
 });
 
+router.put('/:userId', async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(req.params.userId, req.body);
+        console.log(updatedUser);
+        return res.redirect(`/users/${updatedUser._id}`);
+    } catch (error) {
+        console.log(error);
+        return res.redirect(`/users/${req.params.userId}`);
+    }
+});
+
+router.delete('/:userID', async (req, res) => {
+    try {
+        const deletedUser = await User.findByIdAndDelete(req.params.userID);
+        console.log(deletedUser);
+    } catch (error) {
+        console.log(error);
+    }
+    return res.redirect('/users');
+});
+
 
 module.exports = router;
