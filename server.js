@@ -3,7 +3,7 @@ const app = express();
 const methodOverride = require('method-override');
 const controllers = require('./controllers');
 
-const PORT = 4400;
+const PORT = process.env.PORT || 4400;
 
 app.set('view engine', 'ejs');
 
