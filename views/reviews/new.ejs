@@ -20,21 +20,51 @@
                         <div class="content has-text-centered">
                             <h3 class="title is-3 has-text-light">New Review Form</h3>
                             <div>
-<form action="saveData" method="post"></form>
-<pre>
-Rating             : <input type="number" min=1 max=5  placeholder="Rating" <br>
-
-Title              : <input type="number" placeholder="Title" <br>
-
-Content            : <input type="number" placeholder="Leave Review Here" <br>
-                                
-ReviewedSellerUser : <input type="number" placeholder="ReviewedSellerUser" <br>
-                     
-ReviewingBuyerUser : <input type="number" placeholder="ReviewingBuyerUser" <br>
-                                
-<input type="submit" value="Submit Review">
-</pre>
- </form>
+                                <main class="container">
+                                    <div class="columns is-multiline is-centered">
+                                        <div class="column is-two-thirds">
+                                            <article class="card form-card has-background-grey-dark">
+                                                <form action="/reviews" method="POST">
+                                                    
+                                                    <div class="field">
+                                                        <label class="label has-text-light">Rating *</label>
+                                                        <div class="control has-icons-right">
+                                                            <input class="input" type="number" name="rating" placeholder="Insert Rating Here" required>
+                                                            <span class="icon is-right">⭐️</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="field">
+                                                        <label class="label has-text-light">Title *</label>
+                                                        <div class="control">
+                                                            <input class="input" type="text" name="title" placeholder="Insert Title Here" required>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="field">
+                                                        <label class="label has-text-light">Comments *</label>
+                                                        <div class="control">
+                                                            <input class="input" type="text" name="content" placeholder="Write comments here">
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="has-text-light"> * Required</h5>
+                                                    </div>
+                                                    <div class="field form-buttons is-grouped is-grouped-centered">
+                                                        <div class="control">
+                                                            <button type="submit" class="button is-primary has-background-primary-dark">Add New Review</button>
+                                                        </div>
+                                                        <div class="control">
+                                                            <button type="reset" class="button is-dark">Reset Form</button>
+                                                        </div>
+                                                        <div class="control">
+                                                            <a class="button is-light" href="/reviews">Cancel</a>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </main>
                             </div>
                         </div>
                     </div>

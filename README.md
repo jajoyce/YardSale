@@ -32,6 +32,8 @@ Our current website is just a starting point we would like to add a few of the f
 
 * Create a link from the Sellers review page to the new review form 
 
+* Adding bcrypt and password hass for user logins
+
 ## Sources and References
 
 * Stack Overflow: https://stackoverflow.com/
