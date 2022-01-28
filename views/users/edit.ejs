@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../partials/head.ejs', {page: 'Update User'}) %>
+
+<body class="has-navbar-fixed-top has-background-grey-darker">
+
+    <%- include ('../partials/nav.ejs') %>
+
+    <section class="hero has-background-primary-dark has-text-centered">
+        <div class="hero-body">
+            <h2 class="title is-2 has-text-light">Update Your Profile:</h2>
+            <h3 class="title is-3 has-text-light"><%= user.name %></h3>
+        </div>
+    </section>
+    <main class="container">
+        <div class="columns is-multiline is-centered">
+            <div class="column is-two-thirds">
+                <article class="card form-card has-background-grey-dark">
+                    <form action="/users/<%= user._id %>?_method=PUT" method="POST">
+                        <div class="field">
+                            <label class="label has-text-light">UserName *</label>
+                            <div class="control">
+                                <input class="input" type="text" name="userName" value="<%= user.userName %>" placeholder="<%= user.userName %>" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-light">First Name *</label>
+                            <div class="control">
+                                <input class="input" type="text" name="firstName" value="<%= user.firstName %>" placeholder="<%= user.firstName %>" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-light">Last Name *</label>
+                            <div class="control">
+                                <input class="input" type="text" name="lastName" value="<%= user.lastName %>" placeholder="<%= user.lastName %>" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-light">Location *</label>
+                            <div class="control">
+                                <% if (user.location == "New York") { %>
+                                    <input type="radio" id="new-york" name="location" value="New York" required checked>
+                                <% } else { %>
+                                    <input type="radio" id="new-york" name="location" value="New York" required>
+                                <% } %>
+                                <label class="has-text-light" for="new-york">&nbsp;New York</label><br>
+                                <% if (user.location == "Boston") { %>
+                                    <input type="radio" id="boston" name="location" value="Boston" required checked>
+                                <% } else { %>
+                                    <input type="radio" id="boston" name="location" value="Boston" required>
+                                <% } %>
+                                <label class="has-text-light" for="boston">&nbsp;Boston</label><br>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-light">Profile Photo</label>
+                            <div class="control">
+                                <input class="input" type="text" name="profileImage" value="<%= user.profileImage %>" placeholder="<%= user.profileImage %>">
+                            </div>
+                        </div>
+                        <div class="has-text-light">
+                            <h5>* Required</h5>
+                        </div>
+                        <div class="field form-buttons is-grouped is-grouped-centered">
+                            <div class="control">
+                                <button type="submit" class="button is-primary has-background-primary-dark">Update Product</button>
+                            </div>
+                            <div class="control">
+                                <button type="reset" class="button is-dark">Reset Form</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+                        <div class="field form-buttons is-grouped is-grouped-centered">
+                            <div class="control">
+                                <button type="submit" class="button is-danger has-background-danger-dark">Delete User Account</button>
+                            </div>
+                            <div class="control">
+                                <a class="button is-light" href="/users/<%= user._id %>">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
