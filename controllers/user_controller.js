@@ -23,4 +23,16 @@ router.get('/:userID', async (req, res) => {
     }
 });
 
+router.get('/:userId/edit', async (req, res) => {
+    try {
+        const updatingUser = await User.findById(req.params.userId);
+        console.log(updatingUser);
+        return res.render('users/edit.ejs', { user: updatingUser })
+    } catch (error) {
+        console.log(error);
+        return res.redirect('/users');
+    }
+});
+
+
 module.exports = router;
