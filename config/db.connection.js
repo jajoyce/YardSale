@@ -1,7 +1,15 @@
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://127.0.0.1:27017/yardsale';
+require('dotenv').config();
 
-mongoose.connect(connectionString);
+const connectionString = process.env.MONGODB_URI;
+
+mongoose.connect(
+    connectionString,
+    { useNewUrlParser: true, useUnifiedTopology: true},
+    () => {
+      console.log('Connected to MongoDB');
+    }
+);
 
 mongoose.connection.on('connected', () => {
     console.log(`[${new Date().toLocaleTimeString()}] ***** MongoDB CONNECTED *****`); 
