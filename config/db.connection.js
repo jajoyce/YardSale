@@ -5,7 +5,7 @@ const connectionString = process.env.MONGODB_URI;
 
 mongoose.connect(
     connectionString,
-    { useNewUrlParser: true, useUnifiedTopology: true},
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     () => {
       console.log('Connected to MongoDB');
     }
